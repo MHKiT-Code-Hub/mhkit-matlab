@@ -30,10 +30,6 @@ function v=spectral_width(S,varargin)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-py.importlib.import_module('mhkit');
-py.importlib.import_module('mhkit_python_utils');
-
 if nargin == 2
     freq_bins = py.numpy.array(varargin{1});
 elseif nargin == 1
@@ -65,5 +61,5 @@ if (isa(S,'py.pandas.core.frame.DataFrame')~=1)
 end
 
 e0=py.mhkit.wave.resource.spectral_width(S,pyargs('frequency_bins',freq_bins));
-v=double(e0.values);
+v=double(e0);
 

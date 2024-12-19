@@ -31,10 +31,6 @@ function Tavg=average_crest_period(S,varargin)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-py.importlib.import_module('mhkit');
-py.importlib.import_module('mhkit_python_utils');
-
 if nargin == 2
     freq_bins = py.numpy.array(varargin{1});
 elseif nargin == 1
@@ -65,5 +61,5 @@ if (isa(S,'py.pandas.core.frame.DataFrame')~=1)
 end
 
 Tavg=py.mhkit.wave.resource.average_crest_period(S,pyargs('frequency_bins',freq_bins));
-Tavg=double(Tavg.values);
+Tavg=double(Tavg);
 

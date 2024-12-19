@@ -54,9 +54,6 @@ arguments
 
 end
 
-py.importlib.import_module('mhkit');
-py.importlib.import_module('mhkit_python_utils');
-
 % convert to dataframe
 if (isa(S,'py.pandas.core.frame.DataFrame')~=1)
     if (isstruct(S)==1)
@@ -86,5 +83,5 @@ J=py.mhkit.wave.resource.energy_flux(S,h,pyargs('rho',options.rho,'g',options.g,
 
 
 
-J=double(J.values);
+J=double(J);
 
