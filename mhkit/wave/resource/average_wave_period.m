@@ -31,9 +31,6 @@ function Tavg=average_wave_period(S,varargin)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-py.importlib.import_module('mhkit');
-py.importlib.import_module('mhkit_python_utils');
-
 if nargin == 2
     freq_bins = py.numpy.array(varargin{1});
 elseif nargin == 1
@@ -65,5 +62,5 @@ if (isa(S,'py.pandas.core.frame.DataFrame')~=1)
 end
 
 Tm=py.mhkit.wave.resource.average_wave_period(S,pyargs('frequency_bins',freq_bins));
-Tavg=double(Tm.values);
+Tavg=double(Tm);
 

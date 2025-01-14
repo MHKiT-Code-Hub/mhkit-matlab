@@ -28,9 +28,6 @@ function Tp=peak_period(S)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-py.importlib.import_module('mhkit');
-py.importlib.import_module('mhkit_python_utils');
-
 if (isa(S,'py.pandas.core.frame.DataFrame')~=1)
     if (isstruct(S)==1)
         x=size(S.spectrum);
@@ -53,5 +50,5 @@ if (isa(S,'py.pandas.core.frame.DataFrame')~=1)
 end
 
 Tp=py.mhkit.wave.resource.peak_period(S);
-Tp=double(Tp.values);
+Tp=double(Tp);
 
